@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Function prototype: takes two integer pointers as arguments
+void swap(int *x, int *y);
+
+int main() {
+    int a = 10;
+    int b = 20;
+
+    printf("Before swap, a = %d, b = %d\n", a, b);
+
+    // Call the function by passing the addresses of a and b
+    swap(&a, &b);
+
+    printf("After swap, a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+
+// Function definition
+void swap(int *x, int *y) {
+    int temp;
+
+    // Access the value at address x, store in temp
+    temp = *x;
+
+    // Access the value at address y, store it at address x
+    *x = *y;
+
+    // Store the value of temp at address y
+    *y = temp;
+}
